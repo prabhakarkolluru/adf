@@ -1,0 +1,6 @@
+{
+	"name": "ir-sagarsoft-onprem",
+	"properties": {
+		"type": "SelfHosted"
+	}
+}

@@ -1,0 +1,98 @@
+{
+	"name": "pl_master_job",
+	"properties": {
+		"activities": [
+			{
+				"name": "Demo1",
+				"type": "ExecutePipeline",
+				"dependsOn": [],
+				"policy": {
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"pipeline": {
+						"referenceName": "pl_Ingest_Employees_demo1",
+						"type": "PipelineReference"
+					},
+					"waitOnCompletion": true
+				}
+			},
+			{
+				"name": "Demo2",
+				"type": "ExecutePipeline",
+				"dependsOn": [
+					{
+						"activity": "Demo1",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"policy": {
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"pipeline": {
+						"referenceName": "pl_Ingest_Employees_demo2",
+						"type": "PipelineReference"
+					},
+					"waitOnCompletion": true
+				}
+			},
+			{
+				"name": "Demo3",
+				"type": "ExecutePipeline",
+				"dependsOn": [
+					{
+						"activity": "Demo2",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"policy": {
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"pipeline": {
+						"referenceName": "pl_getMetadata_demo3",
+						"type": "PipelineReference"
+					},
+					"waitOnCompletion": true
+				}
+			},
+			{
+				"name": "Demo4",
+				"type": "ExecutePipeline",
+				"dependsOn": [
+					{
+						"activity": "Demo3",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"policy": {
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"pipeline": {
+						"referenceName": "pl_ingest_multiple_files_sql_demo4",
+						"type": "PipelineReference"
+					},
+					"waitOnCompletion": true
+				}
+			}
+		],
+		"folder": {
+			"name": "Practice"
+		},
+		"annotations": [],
+		"lastPublishTime": "2026-08-17T12:53:00Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}

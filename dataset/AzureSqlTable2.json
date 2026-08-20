@@ -1,0 +1,42 @@
+{
+	"name": "AzureSqlTable2",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LS_Azure_SQL_DB",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "department_id",
+				"type": "nvarchar"
+			},
+			{
+				"name": "department_name",
+				"type": "nvarchar"
+			},
+			{
+				"name": "business_unit",
+				"type": "nvarchar"
+			},
+			{
+				"name": "department_head",
+				"type": "nvarchar"
+			},
+			{
+				"name": "location",
+				"type": "nvarchar"
+			},
+			{
+				"name": "status",
+				"type": "nvarchar"
+			}
+		],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "departments.csv"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

@@ -1,0 +1,16 @@
+{
+	"name": "AzureSqlTable6",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LS_Azure_SQL_DB",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [],
+		"typeProperties": {
+			"table": "tbl_locationfiltered"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}
