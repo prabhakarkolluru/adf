@@ -1,0 +1,77 @@
+{
+	"name": "DS_Staging_SalesOrder",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LS_Azure_SQL_DB",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "Datasets"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "OrderId",
+				"type": "nvarchar"
+			},
+			{
+				"name": "LineNumber",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "OrderDate",
+				"type": "date"
+			},
+			{
+				"name": "ProductId",
+				"type": "nvarchar"
+			},
+			{
+				"name": "CustomerId",
+				"type": "nvarchar"
+			},
+			{
+				"name": "StoreId",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Quantity",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "UnitPrice",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 4
+			},
+			{
+				"name": "DiscountAmount",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 4
+			},
+			{
+				"name": "CostAmount",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 4
+			},
+			{
+				"name": "FileName",
+				"type": "nvarchar"
+			},
+			{
+				"name": "LoadTimestamp",
+				"type": "datetime2",
+				"scale": 3
+			}
+		],
+		"typeProperties": {
+			"schema": "stg",
+			"table": "SalesOrder"
+		}
+	}
+}

@@ -1,0 +1,53 @@
+{
+	"name": "DS_Staging_Customer",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LS_Azure_SQL_DB",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "Datasets"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "CustomerId",
+				"type": "nvarchar"
+			},
+			{
+				"name": "CustomerName",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Email",
+				"type": "nvarchar"
+			},
+			{
+				"name": "City",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Country",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Segment",
+				"type": "nvarchar"
+			},
+			{
+				"name": "FileName",
+				"type": "nvarchar"
+			},
+			{
+				"name": "LoadTimestamp",
+				"type": "datetime2",
+				"scale": 3
+			}
+		],
+		"typeProperties": {
+			"schema": "stg",
+			"table": "Customer"
+		}
+	}
+}

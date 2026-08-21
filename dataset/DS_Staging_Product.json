@@ -1,0 +1,55 @@
+{
+	"name": "DS_Staging_Product",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LS_Azure_SQL_DB",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "Datasets"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "ProductId",
+				"type": "nvarchar"
+			},
+			{
+				"name": "ProductName",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Category",
+				"type": "nvarchar"
+			},
+			{
+				"name": "SubCategory",
+				"type": "nvarchar"
+			},
+			{
+				"name": "UnitPrice",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 4
+			},
+			{
+				"name": "IsActive",
+				"type": "bit"
+			},
+			{
+				"name": "FileName",
+				"type": "nvarchar"
+			},
+			{
+				"name": "LoadTimestamp",
+				"type": "datetime2",
+				"scale": 3
+			}
+		],
+		"typeProperties": {
+			"schema": "stg",
+			"table": "Product"
+		}
+	}
+}

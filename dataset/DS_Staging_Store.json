@@ -1,0 +1,45 @@
+{
+	"name": "DS_Staging_Store",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LS_Azure_SQL_DB",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "Datasets"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "StoreId",
+				"type": "nvarchar"
+			},
+			{
+				"name": "StoreName",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Region",
+				"type": "nvarchar"
+			},
+			{
+				"name": "City",
+				"type": "nvarchar"
+			},
+			{
+				"name": "FileName",
+				"type": "nvarchar"
+			},
+			{
+				"name": "LoadTimestamp",
+				"type": "datetime2",
+				"scale": 3
+			}
+		],
+		"typeProperties": {
+			"schema": "stg",
+			"table": "Store"
+		}
+	}
+}

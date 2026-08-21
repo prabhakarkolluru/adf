@@ -1,0 +1,15 @@
+{
+	"name": "DS_SQL_Meta",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LS_Azure_SQL_DB",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "Datasets"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": []
+	}
+}
