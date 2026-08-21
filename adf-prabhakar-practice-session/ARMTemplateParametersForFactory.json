@@ -1,0 +1,48 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"value": "adf-prabhakar-practice-session"
+		},
+		"AzureBlobStorage1_connectionString": {
+			"value": ""
+		},
+		"LS_ADLS_accountKey": {
+			"value": ""
+		},
+		"LS_ADLS_Workshop_accountKey": {
+			"value": ""
+		},
+		"LS_Azure_SQL_DB_password": {
+			"value": ""
+		},
+		"ls_ADLS_Storage_accountKey": {
+			"value": ""
+		},
+		"ls_demo1_employees_accountKey": {
+			"value": ""
+		},
+		"LS_ADLS_properties_typeProperties_url": {
+			"value": "https://datastorage0627.dfs.core.windows.net/"
+		},
+		"LS_ADLS_Workshop_properties_typeProperties_url": {
+			"value": "https://datastorage0627.dfs.core.windows.net/"
+		},
+		"LS_Azure_SQL_DB_properties_typeProperties_server": {
+			"value": "adf-practice-demo.database.windows.net"
+		},
+		"LS_Azure_SQL_DB_properties_typeProperties_database": {
+			"value": "adf_practice"
+		},
+		"LS_Azure_SQL_DB_properties_typeProperties_userName": {
+			"value": "demo_user"
+		},
+		"ls_ADLS_Storage_properties_typeProperties_url": {
+			"value": "https://datastorage0627.dfs.core.windows.net/"
+		},
+		"ls_demo1_employees_properties_typeProperties_url": {
+			"value": "https://datastorage0627.dfs.core.windows.net/"
+		}
+	}
+}

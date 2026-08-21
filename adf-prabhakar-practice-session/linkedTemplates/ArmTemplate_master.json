@@ -1,0 +1,173 @@
+{
+	"$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"type": "string",
+			"metadata": "Data Factory name",
+			"defaultValue": "adf-prabhakar-practice-session"
+		},
+		"AzureBlobStorage1_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'AzureBlobStorage1'"
+		},
+		"LS_ADLS_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'LS_ADLS'"
+		},
+		"LS_ADLS_Workshop_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'LS_ADLS_Workshop'"
+		},
+		"LS_Azure_SQL_DB_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'LS_Azure_SQL_DB'"
+		},
+		"ls_ADLS_Storage_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'ls_ADLS_Storage'"
+		},
+		"ls_demo1_employees_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'ls_demo1_employees'"
+		},
+		"LS_ADLS_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://datastorage0627.dfs.core.windows.net/"
+		},
+		"LS_ADLS_Workshop_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://datastorage0627.dfs.core.windows.net/"
+		},
+		"LS_Azure_SQL_DB_properties_typeProperties_server": {
+			"type": "string",
+			"defaultValue": "adf-practice-demo.database.windows.net"
+		},
+		"LS_Azure_SQL_DB_properties_typeProperties_database": {
+			"type": "string",
+			"defaultValue": "adf_practice"
+		},
+		"LS_Azure_SQL_DB_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "demo_user"
+		},
+		"ls_ADLS_Storage_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://datastorage0627.dfs.core.windows.net/"
+		},
+		"ls_demo1_employees_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://datastorage0627.dfs.core.windows.net/"
+		},
+		"containerUri": {
+			"type": "string",
+			"metadata": "URI to storage account containing linked ARM templates"
+		},
+		"containerSasToken": {
+			"type": "string",
+			"metadata": "Sas token to storage account containing linked ARM templates"
+		}
+	},
+	"variables": {
+		"factoryId": "[concat('Microsoft.DataFactory/factories/', parameters('factoryName'))]"
+	},
+	"resources": [
+		{
+			"name": "adf-prabhakar-practice-session_ArmTemplate_0",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2024-03-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_0.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					},
+					"AzureBlobStorage1_connectionString": {
+						"value": "[parameters('AzureBlobStorage1_connectionString')]"
+					},
+					"LS_ADLS_accountKey": {
+						"value": "[parameters('LS_ADLS_accountKey')]"
+					},
+					"LS_ADLS_Workshop_accountKey": {
+						"value": "[parameters('LS_ADLS_Workshop_accountKey')]"
+					},
+					"LS_Azure_SQL_DB_password": {
+						"value": "[parameters('LS_Azure_SQL_DB_password')]"
+					},
+					"ls_ADLS_Storage_accountKey": {
+						"value": "[parameters('ls_ADLS_Storage_accountKey')]"
+					},
+					"ls_demo1_employees_accountKey": {
+						"value": "[parameters('ls_demo1_employees_accountKey')]"
+					},
+					"LS_ADLS_properties_typeProperties_url": {
+						"value": "[parameters('LS_ADLS_properties_typeProperties_url')]"
+					},
+					"LS_ADLS_Workshop_properties_typeProperties_url": {
+						"value": "[parameters('LS_ADLS_Workshop_properties_typeProperties_url')]"
+					},
+					"LS_Azure_SQL_DB_properties_typeProperties_server": {
+						"value": "[parameters('LS_Azure_SQL_DB_properties_typeProperties_server')]"
+					},
+					"LS_Azure_SQL_DB_properties_typeProperties_database": {
+						"value": "[parameters('LS_Azure_SQL_DB_properties_typeProperties_database')]"
+					},
+					"LS_Azure_SQL_DB_properties_typeProperties_userName": {
+						"value": "[parameters('LS_Azure_SQL_DB_properties_typeProperties_userName')]"
+					},
+					"ls_ADLS_Storage_properties_typeProperties_url": {
+						"value": "[parameters('ls_ADLS_Storage_properties_typeProperties_url')]"
+					},
+					"ls_demo1_employees_properties_typeProperties_url": {
+						"value": "[parameters('ls_demo1_employees_properties_typeProperties_url')]"
+					}
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "adf-prabhakar-practice-session_ArmTemplate_1",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2024-03-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_1.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					}
+				}
+			},
+			"dependsOn": [
+				"[resourceId('Microsoft.Resources/deployments', 'adf-prabhakar-practice-session_ArmTemplate_0')]"
+			]
+		},
+		{
+			"name": "adf-prabhakar-practice-session_ArmTemplate_2",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2024-03-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_2.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					}
+				}
+			},
+			"dependsOn": [
+				"[resourceId('Microsoft.Resources/deployments', 'adf-prabhakar-practice-session_ArmTemplate_1')]"
+			]
+		}
+	]
+}
